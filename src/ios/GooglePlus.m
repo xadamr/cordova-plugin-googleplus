@@ -68,7 +68,10 @@ static void swizzleMethod(Class class, SEL destinationSelector, SEL sourceSelect
   signIn.shouldFetchGoogleUserEmail = YES;
   signIn.shouldFetchGoogleUserID = YES;
   signIn.clientID = apiKey;
-  signIn.scopes = @[kGTLAuthScopePlusLogin];
+  signIn.scopes = @[@"https://www.googleapis.com/auth/plus.login",
+                    @"https://www.googleapis.com/auth/plus.me",
+                    @"https://www.googleapis.com/auth/userinfo.email",
+                    @"https://www.googleapis.com/auth/userinfo.profile"];
   signIn.attemptSSO = YES; // tries to use other installed Google apps
   signIn.delegate = self;
   return signIn;
