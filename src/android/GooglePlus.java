@@ -113,8 +113,10 @@ public class GooglePlus extends CordovaPlugin implements ConnectionCallbacks, On
         .addConnectionCallbacks(this)
         .addOnConnectionFailedListener(this)
         .addApi(Plus.API, Plus.PlusOptions.builder().build())
-        .addScope(Plus.SCOPE_PLUS_LOGIN)
-        .addScope(Plus.SCOPE_PLUS_PROFILE)
+        .addScope("https://www.googleapis.com/auth/plus.login")
+        .addScope("https://www.googleapis.com/auth/plus.me")
+        .addScope("https://www.googleapis.com/auth/userinfo.email")
+        .addScope("https://www.googleapis.com/auth/userinfo.profile")
         .build();
   }
 
